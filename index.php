@@ -867,7 +867,7 @@ $(document).ready(function(){
 
 					<hr style="padding-bottom: 10px;">
 
-					<div class="row col-md-12">
+					<!-- <div class="row col-md-12">
 
 						<div class="col-md-6">
 
@@ -939,6 +939,15 @@ $(document).ready(function(){
 
 							</div>
 
+							
+
+						</div>
+
+					</div> -->
+
+					<div class="row col-md-12">
+
+						<div class="col-md-6">
 							<div class="form-group label-floating">
 
 								<label for="religion" class="control-label" onkeypress='return disableNumeric(event);' onkeyup='(event);' >Religion</label>
@@ -946,15 +955,6 @@ $(document).ready(function(){
 								<input type="text" name="religion123" class="form-control" id="religion" maxlength="30" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
 
 							</div>
-
-						</div>
-
-					</div>
-
-					<div class="row col-md-12">
-
-						<div class="col-md-6">
-
 							<label>Select Current Address<label class="text-danger">*</label></label>
 
 							<div class="form-group label-floating">

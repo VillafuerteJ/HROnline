@@ -133,10 +133,15 @@ class PDF extends FPDF{
 	$pdf->Cell(10, 5, $data['GENDER'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	//BLOOD TYPE
-	$pdf->SetFont('Arial','I',10);
+	/* $pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Blood Type:',0,0);
 	$pdf->SetFont('Arial','',10);
-	$pdf->Cell(60, 5, $data['BLOODTYPE'],0,0);//end of line
+	$pdf->Cell(60, 5, $data['BLOODTYPE'],0,0);//end of line */
+	//APPLICATION_SOURCE
+	$pdf->SetFont('Arial','I',10);
+	$pdf->Cell(25, 5, 'Source:',0,0);
+	$pdf->SetFont('Arial','',10);
+	$pdf->Cell(60, 5, $data['APPLICATION_SOURCE'],0,0);//end of line 
 	//RELIGION
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Religion:',0,0);
@@ -144,7 +149,7 @@ class PDF extends FPDF{
 	$pdf->Cell(10, 5, $data['RELIGION'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	//HEIGHT
-	$pdf->SetFont('Arial','I',10);
+	/* $pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Height:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['HEIGHT'],0,0);//end of line
@@ -153,7 +158,7 @@ class PDF extends FPDF{
 	$pdf->Cell(30, 5, 'Weight:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['WEIGHT'],0,1);
-	$pdf->Cell(59, 5, '',0,1);//end of line
+	$pdf->Cell(59, 5, '',0,1);//end of line */
 	
 	//current address
 	$pdf->SetFont('Arial','I',10);
@@ -715,7 +720,7 @@ class PDF extends FPDF{
 	$pdf->Cell(10, 5, 'Interviewer Comment',0,1,"L");//END OF LINE
 	$pdf->Cell(59, 5, '',0,1);
 
-	$commentsql =
+	$commentsql =	
 "
 
 		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id

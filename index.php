@@ -516,13 +516,13 @@ $(document).ready(function(){
 
 							<div class="form-group" id="salary_group"><!-- SALARY -->
 
-		  						<label for="salary">Expected Salary</label>
+		  						<label for="salary">Expected Salary <label class="text-danger">*</label></label>
 
 								<div class="input-group" id="salarygroup">
 
-									<select id="salary" class="select form-control" name="salaryexpectation" >
+									<select id="salary" class="select form-control" name="salaryexpectation" required>
 
-										<option value="0" id='intern'>0</option>
+										<option value="" id='intern'>0</option>
 
 										<option value="10,000.00 - 15,000.00">&#8369;10,000.00 - &#8369;15,000.00</option>
 
@@ -543,7 +543,7 @@ $(document).ready(function(){
 										<option value="More than 55,000.00"> More than &#8369;55,000.00</option>
 
 									</select><span class="input-group-addon add-on"><span  class="fa fa-arrow-down"></span>
-
+									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 
 							</div>
@@ -592,10 +592,11 @@ $(document).ready(function(){
 
 							<div class="form-group label-floating">
 
-								<label for="mname" class="control-label" >Middle Name</label>
+								<label for="mname" class="control-label" >Middle Name <label class="text-danger">*</label></label>
 
-								<input type="text" name="mname" ng-model="mname" id="mname" minlength="2" maxlength="30" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
+								<input type="text" name="mname" ng-model="mname" id="mname" minlength="2" maxlength="30" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 								
+								<div class="help-block with-errors" style="color: red"></div>
 							</div>
 
 							<div class="form-group label-floating">
@@ -1622,7 +1623,7 @@ $(document).ready(function(){
 
 	                    	<div class="col-md-12">
 
-	                    		<label><b>Primary:</b></label>
+	                    		<label><b>Primary:</b><label class="text-danger">*</label></label>
 
 	                    	</div>
 
@@ -1632,8 +1633,8 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="text" name="elem_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
-
+	                    			<input type="text" name="elem_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
+									<div class="help-block with-errors" style="color: red"></div>			  
 	                    		</div>
 
 	                    	</div>
@@ -1649,7 +1650,7 @@ $(document).ready(function(){
 									<div class="input-group-addon">to</div>
 
 									<input data-provide="datepicker" name="elem_dateto" id="pto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
-
+												  
 								</div>
 
 
@@ -1669,7 +1670,7 @@ $(document).ready(function(){
 
 	                    	<div class="col-md-12">
 
-	                    		<label><b>Secondary:</b></label>
+	                    		<label><b>Secondary:</b><label class="text-danger">*</label></label>
 
 	                    	</div>
 
@@ -1679,8 +1680,8 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="" name="hs_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
-
+	                    			<input type="" name="hs_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
+									<div class="help-block with-errors" style="color: red"></div>
 	                    		</div>
 
 	                    	</div>
@@ -1720,12 +1721,12 @@ $(document).ready(function(){
 
 	                    	<div class="col-md-12">
 
-	                    		<label><b>Tertiary:</b></label>
+	                    		<label><b>Tertiary:</b><label class="text-danger">*</label></label>
 
-	                    		<label style="padding-left: 2%">
+	                    			<label style="padding-left: 2%">
 
 	                    			<input type="checkbox"  name="college_grad" id="college_grad" value="YES" onclick="if(this.checked){showTertiary()} else {hideTertiary()}" checked>Graduated
-
+									
 	                    		</label>
 
 	                    	</div>
@@ -1738,8 +1739,8 @@ $(document).ready(function(){
 
 		                    			<label class="control-label" for="school">Name of School</label>
 
-		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
-
+		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
+										<div class="help-block with-errors" style="color: red"></div>
 		                    		</div>
 
 		                    	</div>
@@ -3104,6 +3105,7 @@ $(document).ready(function(){
 		$( document ).ready(function() {
 
                $("#btn_intern").on('click',function(){
+
                  jQuery("#question1").prop("readonly", "true").val("N/A"); //Disabled the essay question 
                  jQuery("#question2").prop("readonly", "true").val("N/A");
                  jQuery("#question3").prop("readonly", "true").val("N/A");
@@ -3126,7 +3128,7 @@ $(document).ready(function(){
 
                    jQuery("#btn_freshgrad").on('click', function(event){
 
-                   jQuery("#Intdate").hide();jQuery("#Expdate").show();jQuery("#salary_group").show();jQuery("#removeWorkid").show();
+                   jQuery("#Intdate").hide();jQuery("#Expdate").show();jQuery("#salary_group").show();jQuery("#removeWorkid").hide();
 
                    });   
 
